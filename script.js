@@ -1,7 +1,11 @@
-// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const mosaico = document.getElementById('mosaico');
-
+    const fechaActual = new Date();
+    const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+    const fechaFormateada = fechaActual.toLocaleDateString('es-ES', opciones);
+    document.getElementById('fecha').textContent = fechaFormateada;
+    
     // Función para obtener productos de la API
     const obtenerProductos = async () => {
         try {
